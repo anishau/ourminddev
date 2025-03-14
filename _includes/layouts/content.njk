@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+---
+<article>
+    <header>
+        <h1>{{ title }}</h1>
+        {% if keyMessage %}
+        <div class="key-message">
+            {{ keyMessage }}
+        </div>
+        {% endif %}
+    </header>
+
+    {{ content | safe }}
+
+    {% if resources %}
+    <section class="resources">
+        <h2>Resources</h2>
+        {{ resources | safe }}
+    </section>
+    {% endif %}
+</article> 
