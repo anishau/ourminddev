@@ -36,6 +36,9 @@
             border-bottom: 1px solid var(--accent);
             padding-bottom: 1rem;
             margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         nav a {
             color: inherit;
@@ -155,6 +158,56 @@
             filter: grayscale(100%);
             opacity: 0.8;
         }
+        .auth-nav {
+            position: relative;
+        }
+
+        .auth-button {
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .auth-button:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .auth-modal {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 1rem;
+            background: var(--bg);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            padding: 1.5rem;
+            min-width: 300px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .auth-modal::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: 20px;
+            width: 16px;
+            height: 16px;
+            background: var(--bg);
+            border-left: 1px solid var(--accent);
+            border-top: 1px solid var(--accent);
+            transform: rotate(45deg);
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -164,6 +217,43 @@
             <a href="/hearing-voices">Hearing Voices</a>
             <a href="/paranoia">Paranoia</a>
             <a href="/field_notes">Field Notes</a>
+            <div class="auth-nav">
+                <button id="authButton" class="auth-button">Sign In</button>
+                <div id="authModal" class="auth-modal hidden">
+                    <div id="authStatus" class="auth-status"></div>
+                    <div class="auth-form" id="signInForm">
+                        <h2>Sign In</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <button type="submit">Sign In</button>
+                        </form>
+                        <p>Don't have an account? <a href="#" id="showSignUp">Sign Up</a></p>
+                    </div>
+
+                    <div class="auth-form hidden" id="signUpForm">
+                        <h2>Sign Up</h2>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="registerEmail">Email</label>
+                                <input type="email" id="registerEmail" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Password</label>
+                                <input type="password" id="registerPassword" name="password" required>
+                            </div>
+                            <button type="submit">Sign Up</button>
+                        </form>
+                        <p>Already have an account? <a href="#" id="showSignIn">Sign In</a></p>
+                    </div>
+                </div>
+            </div>
         </nav>
 
         {% if title %}
@@ -222,5 +312,38 @@
         <p>a <a href="https://www.mutua.nyc">mutua.nyc</a> collaboration</p>
         <span class="handshake">🤝</span>
     </footer>
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
+
+        const supabase = createClient(
+            '{{ env.supabaseUrl }}',
+            '{{ env.supabaseAnonKey }}'
+        )
+
+        const authButton = document.getElementById('authButton')
+        const authModal = document.getElementById('authModal')
+
+        // Toggle auth modal
+        authButton.addEventListener('click', () => {
+            authModal.classList.toggle('hidden')
+        })
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!authModal.contains(e.target) && !authButton.contains(e.target)) {
+                authModal.classList.add('hidden')
+            }
+        })
+
+        // Rest of your existing auth code...
+        const showStatus = (message, isError = false) => {
+            const statusEl = document.getElementById('authStatus')
+            statusEl.textContent = message
+            statusEl.style.display = 'block'
+            statusEl.className = `auth-status ${isError ? 'error' : 'success'}`
+        }
+
+        // ... rest of your existing auth handlers ...
+    </script>
 </body>
 </html> 
