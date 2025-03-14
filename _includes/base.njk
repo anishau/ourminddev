@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+    <script>
+        // Debug values
+        console.log('Template variables:', {
+            raw_url: '{{ env.supabaseUrl }}',
+            raw_key: '{{ env.supabaseAnonKey }}',
+            env_object: {{ env | dump | safe }},
+            has_env: {{ env != undefined }},
+        });
+        
+        window.SUPABASE_URL = '{{ env.supabaseUrl }}'
+        window.SUPABASE_ANON_KEY = '{{ env.supabaseAnonKey }}'
+    </script>
     <style>
         :root {
             --text: #333;
@@ -33,19 +45,23 @@
             flex: 1;
         }
         nav {
-            border-bottom: 1px solid var(--accent);
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
         }
-        nav a {
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .nav-links a {
             color: inherit;
             text-decoration: none;
-            margin-right: 1.5rem;
         }
-        nav a:hover {
+        .nav-links a:hover {
             text-decoration: underline;
         }
         .key-message {
@@ -179,15 +195,18 @@
         }
 
         .auth-modal {
-            position: absolute;
-            right: 0;
-            top: 100%;
-            margin-top: 1rem;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: var(--bg);
             border: 1px solid var(--accent);
             border-radius: 4px;
-            padding: 1.5rem;
+            padding: 2rem;
             min-width: 300px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
@@ -208,50 +227,69 @@
         .hidden {
             display: none;
         }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group input {
+            padding: 0.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 2px;
+        }
+
+        .auth-status {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .auth-status.error {
+            background: rgba(255, 0, 0, 0.1);
+            color: darkred;
+        }
+
+        .auth-status.success {
+            background: rgba(0, 255, 0, 0.1);
+            color: darkgreen;
+        }
+
+        .auth-form button {
+            padding: 0.5rem 1rem;
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .auth-form button:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="/" class="logo">ourmind.care</a>
-            <a href="/hearing-voices">Hearing Voices</a>
-            <a href="/paranoia">Paranoia</a>
-            <a href="/field_notes">Field Notes</a>
+            <div class="nav-links">
+                <a href="/" class="logo">ourmind.care</a>
+                <a href="/hearing-voices">Hearing Voices</a>
+                <a href="/paranoia">Paranoia</a>
+                <a href="/field_notes">Field Notes</a>
+            </div>
             <div class="auth-nav">
                 <button id="authButton" class="auth-button">Sign In</button>
                 <div id="authModal" class="auth-modal hidden">
-                    <div id="authStatus" class="auth-status"></div>
-                    <div class="auth-form" id="signInForm">
-                        <h2>Sign In</h2>
-                        <form id="loginForm">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" id="password" name="password" required>
-                            </div>
-                            <button type="submit">Sign In</button>
-                        </form>
-                        <p>Don't have an account? <a href="#" id="showSignUp">Sign Up</a></p>
-                    </div>
-
-                    <div class="auth-form hidden" id="signUpForm">
-                        <h2>Sign Up</h2>
-                        <form id="registerForm">
-                            <div class="form-group">
-                                <label for="registerEmail">Email</label>
-                                <input type="email" id="registerEmail" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerPassword">Password</label>
-                                <input type="password" id="registerPassword" name="password" required>
-                            </div>
-                            <button type="submit">Sign Up</button>
-                        </form>
-                        <p>Already have an account? <a href="#" id="showSignIn">Sign In</a></p>
-                    </div>
+                    <div id="authContainer"></div>
                 </div>
             </div>
         </nav>
@@ -313,20 +351,27 @@
         <span class="handshake">🤝</span>
     </footer>
     <script type="module">
-        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
-
-        const supabase = createClient(
-            '{{ env.supabaseUrl }}',
-            '{{ env.supabaseAnonKey }}'
-        )
-
+        import { AuthUI } from '/js/auth.js'
+        
         const authButton = document.getElementById('authButton')
         const authModal = document.getElementById('authModal')
+        const authContainer = document.getElementById('authContainer')
+        
+        let auth = null
 
         // Toggle auth modal
-        authButton.addEventListener('click', () => {
-            authModal.classList.toggle('hidden')
-        })
+        if (authButton) {
+            authButton.addEventListener('click', (e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                if (authModal) {
+                    authModal.classList.toggle('hidden')
+                    if (!auth && !authModal.classList.contains('hidden')) {
+                        auth = AuthUI({ container: authContainer })
+                    }
+                }
+            })
+        }
 
         // Close modal when clicking outside
         document.addEventListener('click', (e) => {
@@ -335,15 +380,10 @@
             }
         })
 
-        // Rest of your existing auth code...
-        const showStatus = (message, isError = false) => {
-            const statusEl = document.getElementById('authStatus')
-            statusEl.textContent = message
-            statusEl.style.display = 'block'
-            statusEl.className = `auth-status ${isError ? 'error' : 'success'}`
-        }
-
-        // ... rest of your existing auth handlers ...
+        // Prevent clicks inside modal from closing it
+        authModal.addEventListener('click', (e) => {
+            e.stopPropagation()
+        })
     </script>
 </body>
 </html> 

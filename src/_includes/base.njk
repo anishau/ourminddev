@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome | ourmind.care</title>
+    <title>{{ title }} | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
     <!-- Use the ESM version of Supabase -->
     <script type="module">
@@ -11,8 +11,8 @@
         console.log('Creating Supabase client with:', {
         });
         window.supabase = createClient(
-            'https://ykifhipjmptpqswsblmi.supabase.co',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlraWZoaXBqbXB0cHFzd3NibG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NTIsImV4cCI6MjA1NzU1NjY1Mn0.gvDlgrJHrdT6vWMBQaK8XirtlKSVDX5BvVrMreOfjpk'
+            '{{ env.supabaseUrl }}',
+            '{{ env.supabaseAnonKey }}'
         )
     </script>
     <style>
@@ -372,86 +372,13 @@
             </div>
         </nav>
 
-        
+        {% if title %}
         <h1 class="title">
-            Welcome
+            {{ title }}
         </h1>
-        
+        {% endif %}
 
-        
-<h1>Mindfulness and Curiosity</h1>
-
-<p>
-Full-blown psychosis can feel like a waterfall. Overwhelming, with no ability to press pause. However, in the build up to and in the aftermath of, symptoms can feel less all-consuming. In these somewhat lower-key moments is it possible to refine one's ability to press pause, and activate curiosity without jumping into judgement?
-</p>
-
-<p>
-Through a customizeable recipe of pressing pausing and activating curiosity, can one form a more balanced self? Can this allow one to avoid or diminish the intensity of full-blown episodes?
-</p>
-
-<p>
-It may be useful to practice pressing pause and moving into activating curiosity in one flow, even if pressing pause is still a struggle.
-</p>
-
-<p>
-This is because the answers to the questions asked when activating curiosity can be helpful when pressing pause. A braided circle of sorts.
-</p>
-
-<p>
-In addition, this website hosts notes written by those who have experienced altered states of mind about these states and what caring for them has felt like.
-</p>
-
-<h2>Pressing Pause</h2>
-<p>
-"Pressing pause" is a technique largely drawn from mindfulness, as a way to create a boundary between oneself and the disturbing experience. A way of building a protective cocoon from which you can observe your experience without getting lost within it. In each section, I provide some ideas for pressing pause, but each person will have their own methods that work best.
-</p>
-
-<h2>Activating Curiosity</h2>
-<p>
-"Activating curiosity" allows you to wonder what pain points the distressing experiences call back to. By exploring these points, can you recognize and grow around, learning to hold, the hurt parts of yourself? In each section, I provide some ideas for activating curiosity, but each person will have their own methods that work best.
-</p>
-
-<div class="content-grid">
-    <a href="/hearing-voices" class="content-card">
-        <h2>Hearing Voices</h2>
-        <p>In moments where voices are present, how can you restore yourself?</p>
-    </a>
-    
-    <a href="/paranoia" class="content-card">
-        <h2>Paranoia</h2>
-        <p>In moments where paranoia overtures, how can one remain connected to shared reality?</p>
-    </a>
-
-    <a href="/field_notes" class="content-card">
-        <h2>Field Notes</h2>
-        <p>Lived Experience</p>
-    </a>
-</div>
-
-<style>
-    .content-grid {
-        display: grid;
-        gap: 1.5rem;
-        margin: 2rem 0;
-    }
-    .content-card {
-        padding: 1.5rem;
-        border: 1px solid var(--accent);
-        text-decoration: none;
-        color: inherit;
-        border-radius: 2px;
-    }
-    .content-card:hover {
-        background: var(--accent);
-    }
-    .content-card h2 {
-        margin: 0;
-    }
-    .content-card p {
-        margin: 0.5rem 0 0 0;
-        opacity: 0.8;
-    }
-</style> 
+        {{ content | safe }}
     </div>
     
     <footer class="site-footer">

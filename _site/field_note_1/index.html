@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On Catatonia | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+    <!-- Use the ESM version of Supabase -->
+    <script type="module">
+        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+        console.log('Creating Supabase client with:', {
+        });
+        window.supabase = createClient(
+            'https://ykifhipjmptpqswsblmi.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlraWZoaXBqbXB0cHFzd3NibG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NTIsImV4cCI6MjA1NzU1NjY1Mn0.gvDlgrJHrdT6vWMBQaK8XirtlKSVDX5BvVrMreOfjpk'
+        )
+    </script>
     <style>
         :root {
             --text: #333;
@@ -15,169 +25,357 @@
             --accent-4: rgba(230, 190, 230, 0.7);
             --footer-text: #666;
         }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-            line-height: 1.6;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
             color: var(--text);
             background: var(--bg);
-            margin: 0;
-            padding: 0;
+            line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
+
         .container {
-            max-width: 65ch;
-            margin: 0 auto;
-            padding: 2rem 1rem;
             flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
         }
+
         nav {
-            border-bottom: 1px solid var(--accent);
-            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--accent);
         }
-        nav a {
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
             color: inherit;
             text-decoration: none;
-            margin-right: 1.5rem;
         }
-        nav a:hover {
+
+        .nav-links a:hover {
             text-decoration: underline;
         }
-        .key-message {
-            background: none;
+
+        h1, h2, h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Auth styles */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .auth-modal.visible {
+            display: flex;
+        }
+
+        .auth-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        button {
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .site-footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--accent);
+            color: var(--footer-text);
+        }
+
+        /* Content sections */
+        .content-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .content-card {
             padding: 1.5rem;
+            border: 1px solid var(--accent);
+            text-decoration: none;
+            color: inherit;
+            border-radius: 2px;
+        }
+
+        .content-card:hover {
+            background: var(--accent);
+        }
+
+        .content-card h2 {
             margin: 0;
-            border-radius: 2px;
-            font-style:italic;
         }
 
-        .press-pause {
-            padding: 1.5rem;
+        .content-card p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.8;
+        }
+
+        /* Exercise sections */
+        .key-message {
             background: var(--accent);
+            padding: 1.5rem;
             margin: 2rem 0;
-            border-radius: 2px;
+            border-radius: 4px;
+            font-style: italic;
         }
 
-        .press-pause-section {
+        .press-pause, .activate-curiosity {
+            background: var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .press-pause-section, .activate-curiosity-section {
             background: var(--accent-2);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 2px;
-        }
-
-        .press-pause-section h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
-        }
-
-        .activate-curiosity {
             padding: 1.5rem;
-            background: var(--accent);
-            margin: 2rem 0;
-            border-radius: 2px;
+            margin: 1rem 0;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            align-items: start;
         }
 
         .activate-curiosity-section {
             background: var(--accent-3);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 2px;
         }
 
-        .activate-curiosity-section h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
-        }
-
-        .strengthen-insight {
-            padding: 1.5rem;
-            background: var(--accent);
-            margin: 2rem 0;
-            border-radius: 2px;
-        }
-
-        .strengthen-insight-section {
-            background: var(--accent-4);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 2px;
-        }
-
-        .strengthen-insight-section h3 {
-            margin-top: 0;
-            font-size: 1.1rem;
-        }
-
-        h1, h2, h3 {
-            line-height: 1.2;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-        }
-        h1 {
-            font-size: 2rem;
-        }
-        article {
-            margin: 2rem 0;
-        }
-        .site-footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: var(--footer-text);
-            font-size: 0.875rem;
-            border-top: 1px solid var(--accent);
+        .section-content {
+            text-align: left;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0.5rem;
         }
-        .site-footer a {
-            color: inherit;
-            text-decoration: none;
+
+        .section-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
         }
-        .site-footer a:hover {
-            text-decoration: underline;
+
+        .section-content > p {
+            margin-bottom: 0.1rem;
         }
-        .logo {
-            font-weight: 500;
-            letter-spacing: -0.03em;
+
+        .journal-entry {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-top: 0.25rem;
         }
-        .ascii-art {
-            font-size: 1.5rem;
-            margin: 1rem 0 0.5rem;
+
+        .journal-entry textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            font-family: inherit;
+            background: white;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .past-entries {
+            max-height: 150px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+
+        .past-entries-sidebar {
+            position: sticky;
+            top: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .past-entries-sidebar h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1rem;
             color: var(--footer-text);
-            filter: grayscale(100%);
-            opacity: 0.8;
         }
-        .handshake {
-            font-size: 1.2rem;
-            filter: grayscale(100%);
-            opacity: 0.8;
+
+        .past-entry {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: var(--accent);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .entry-date {
+            font-size: 0.875rem;
+            color: var(--footer-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-content {
+            white-space: pre-wrap;
+            min-height: 1em;
+            padding: 0.5rem;
+            border: 1px solid transparent;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .entry-content:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+            padding: 0.5rem;
+        }
+
+        .entry-actions {
+            margin-top: 0.5rem;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+
+        .entry-actions button {
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .entry-actions button:hover {
+            opacity: 1;
+        }
+
+        .delete-edit {
+            background: #dc3545;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .press-pause-section, .activate-curiosity-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .past-entries-sidebar {
+                position: static;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Keep the textarea styles as they're used by hearing-voices.md and paranoia.md */
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            font-family: inherit;
+            resize: vertical;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="/" class="logo">ourmind.care</a>
-            <a href="/hearing-voices">Hearing Voices</a>
-            <a href="/paranoia">Paranoia</a>
-            <a href="/field_notes">Field Notes</a>
+            <div class="nav-links">
+                <a href="/" class="logo">ourmind.care</a>
+                <a href="/hearing-voices">Hearing Voices</a>
+                <a href="/paranoia">Paranoia</a>
+                <a href="/field_notes">Field Notes</a>
+            </div>
+            <div class="auth-nav">
+                <button id="authButton" class="auth-button">Sign In</button>
+                <div id="authModal" class="auth-modal">
+                    <div id="authContainer"></div>
+                </div>
+            </div>
         </nav>
 
         
         <h1 class="title">
             On Catatonia
         </h1>
-        
-
-        
-
-        
-
-        
-
         
 
         <p>&quot;a psychomotor disturbance that may involve muscle rigidity, stupor or mutism, purposeless movements, negativism, echolalia, and inappropriate or unusual posturing&quot;</p>
@@ -194,5 +392,85 @@
         <p>a <a href="https://www.mutua.nyc">mutua.nyc</a> collaboration</p>
         <span class="handshake">🤝</span>
     </footer>
+
+    <script type="module">
+        import { AuthUI } from '/js/auth.js'
+        
+        const authButton = document.getElementById('authButton')
+        const authModal = document.getElementById('authModal')
+        const authContainer = document.getElementById('authContainer')
+        
+        let auth = null
+
+        if (authButton) {
+            authButton.addEventListener('click', async (e) => {
+                e.preventDefault()
+                e.stopPropagation()
+
+                // If user is signed in, sign them out
+                if (authButton.textContent === 'Sign Out') {
+                    await supabase.auth.signOut()
+                    authButton.textContent = 'Sign In'
+                    // Don't show the auth modal after signing out
+                    return
+                }
+
+                // Show sign in modal
+                if (authModal) {
+                    authModal.classList.add('visible')
+                    authModal.classList.remove('hidden')
+                    if (!auth) {
+                        auth = AuthUI({ container: authContainer })
+                    }
+                }
+            })
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+            if (authModal && !authModal.contains(e.target) && !authButton.contains(e.target)) {
+                authModal.classList.remove('visible')
+                authModal.classList.add('hidden')
+            }
+        })
+
+        // Prevent clicks inside modal from closing it
+        if (authModal) {
+            authModal.addEventListener('click', (e) => {
+                e.stopPropagation()
+            })
+        }
+
+        // Check auth state on page load and changes
+        supabase.auth.onAuthStateChange((event, session) => {
+            if (session) {
+                // User is signed in
+                // Hide the auth modal when signed in
+                authModal.classList.remove('visible')
+                authModal.classList.add('hidden')
+                authButton.textContent = 'Sign Out'
+                // Redirect to hearing voices page if on home page
+                if (window.location.pathname === '/') {
+                    window.location.href = '/hearing-voices';
+                }
+            } else {
+                // User is signed out
+                // Clear the auth UI when signed out
+                auth = null
+                authContainer.innerHTML = ''
+                authButton.textContent = 'Sign In'
+            }
+        })
+
+        // Initial check
+        const { data: { session } } = await supabase.auth.getSession()
+        if (session) {
+            authButton.textContent = 'Sign Out'
+            // Redirect to hearing voices page if on home page
+            if (window.location.pathname === '/') {
+                window.location.href = '/hearing-voices';
+            }
+        }
+    </script>
 </body>
 </html> 

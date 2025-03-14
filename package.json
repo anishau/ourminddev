@@ -7,15 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "eleventy --serve",
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve --port=8081"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^2.0.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.x.x",
-    "dotenv": "^16.x.x"
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "dotenv": "^16.0.0"
   }
 }
