@@ -6,14 +6,11 @@
     <title>{{ title }} | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
     <!-- Use the ESM version of Supabase -->
-    <script type="module">
-        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-        console.log('Creating Supabase client with:', {
+    <script src="https://clerk.browser.accounts.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js"></script>
+    <script>
+        window.Clerk.init({
+            publishableKey: '{{ env.CLERK_PUBLISHABLE_KEY }}'
         });
-        window.supabase = createClient(
-            '{{ env.supabaseUrl }}',
-            '{{ env.supabaseAnonKey }}'
-        )
     </script>
     <style>
         :root {
@@ -115,6 +112,16 @@
             width: 100%;
             max-width: 400px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .auth-form a {
+            color: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .auth-form a:hover {
+            opacity: 0.8;
         }
 
         .form-group {

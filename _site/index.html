@@ -6,14 +6,11 @@
     <title>Welcome | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
     <!-- Use the ESM version of Supabase -->
-    <script type="module">
-        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-        console.log('Creating Supabase client with:', {
+    <script src="https://clerk.browser.accounts.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js"></script>
+    <script>
+        window.Clerk.init({
+            publishableKey: ''
         });
-        window.supabase = createClient(
-            'https://ykifhipjmptpqswsblmi.supabase.co',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlraWZoaXBqbXB0cHFzd3NibG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NTIsImV4cCI6MjA1NzU1NjY1Mn0.gvDlgrJHrdT6vWMBQaK8XirtlKSVDX5BvVrMreOfjpk'
-        )
     </script>
     <style>
         :root {
@@ -379,56 +376,56 @@
         
 
         
-<h1>Mindfulness and Curiosity</h1>
+&lt;h1&gt;Mindfulness and Curiosity&lt;/h1&gt;
 
-<p>
-Full-blown psychosis can feel like a waterfall. Overwhelming, with no ability to press pause. However, in the build up to and in the aftermath of, symptoms can feel less all-consuming. In these somewhat lower-key moments is it possible to refine one's ability to press pause, and activate curiosity without jumping into judgement?
-</p>
+&lt;p&gt;
+Full-blown psychosis can feel like a waterfall. Overwhelming, with no ability to press pause. However, in the build up to and in the aftermath of, symptoms can feel less all-consuming. In these somewhat lower-key moments is it possible to refine one&#39;s ability to press pause, and activate curiosity without jumping into judgement?
+&lt;/p&gt;
 
-<p>
+&lt;p&gt;
 Through a customizeable recipe of pressing pausing and activating curiosity, can one form a more balanced self? Can this allow one to avoid or diminish the intensity of full-blown episodes?
-</p>
+&lt;/p&gt;
 
-<p>
+&lt;p&gt;
 It may be useful to practice pressing pause and moving into activating curiosity in one flow, even if pressing pause is still a struggle.
-</p>
+&lt;/p&gt;
 
-<p>
+&lt;p&gt;
 This is because the answers to the questions asked when activating curiosity can be helpful when pressing pause. A braided circle of sorts.
-</p>
+&lt;/p&gt;
 
-<p>
+&lt;p&gt;
 In addition, this website hosts notes written by those who have experienced altered states of mind about these states and what caring for them has felt like.
-</p>
+&lt;/p&gt;
 
-<h2>Pressing Pause</h2>
-<p>
-"Pressing pause" is a technique largely drawn from mindfulness, as a way to create a boundary between oneself and the disturbing experience. A way of building a protective cocoon from which you can observe your experience without getting lost within it. In each section, I provide some ideas for pressing pause, but each person will have their own methods that work best.
-</p>
+&lt;h2&gt;Pressing Pause&lt;/h2&gt;
+&lt;p&gt;
+&quot;Pressing pause&quot; is a technique largely drawn from mindfulness, as a way to create a boundary between oneself and the disturbing experience. A way of building a protective cocoon from which you can observe your experience without getting lost within it. In each section, I provide some ideas for pressing pause, but each person will have their own methods that work best.
+&lt;/p&gt;
 
-<h2>Activating Curiosity</h2>
-<p>
-"Activating curiosity" allows you to wonder what pain points the distressing experiences call back to. By exploring these points, can you recognize and grow around, learning to hold, the hurt parts of yourself? In each section, I provide some ideas for activating curiosity, but each person will have their own methods that work best.
-</p>
+&lt;h2&gt;Activating Curiosity&lt;/h2&gt;
+&lt;p&gt;
+&quot;Activating curiosity&quot; allows you to wonder what pain points the distressing experiences call back to. By exploring these points, can you recognize and grow around, learning to hold, the hurt parts of yourself? In each section, I provide some ideas for activating curiosity, but each person will have their own methods that work best.
+&lt;/p&gt;
 
-<div class="content-grid">
-    <a href="/hearing-voices" class="content-card">
-        <h2>Hearing Voices</h2>
-        <p>In moments where voices are present, how can you restore yourself?</p>
-    </a>
+&lt;div class=&quot;content-grid&quot;&gt;
+    &lt;a href=&quot;/hearing-voices&quot; class=&quot;content-card&quot;&gt;
+        &lt;h2&gt;Hearing Voices&lt;/h2&gt;
+        &lt;p&gt;In moments where voices are present, how can you restore yourself?&lt;/p&gt;
+    &lt;/a&gt;
     
-    <a href="/paranoia" class="content-card">
-        <h2>Paranoia</h2>
-        <p>In moments where paranoia overtures, how can one remain connected to shared reality?</p>
-    </a>
+    &lt;a href=&quot;/paranoia&quot; class=&quot;content-card&quot;&gt;
+        &lt;h2&gt;Paranoia&lt;/h2&gt;
+        &lt;p&gt;In moments where paranoia overtures, how can one remain connected to shared reality?&lt;/p&gt;
+    &lt;/a&gt;
 
-    <a href="/field_notes" class="content-card">
-        <h2>Field Notes</h2>
-        <p>Lived Experience</p>
-    </a>
-</div>
+    &lt;a href=&quot;/field_notes&quot; class=&quot;content-card&quot;&gt;
+        &lt;h2&gt;Field Notes&lt;/h2&gt;
+        &lt;p&gt;Lived Experience&lt;/p&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
 
-<style>
+&lt;style&gt;
     .content-grid {
         display: grid;
         gap: 1.5rem;
@@ -451,7 +448,7 @@ In addition, this website hosts notes written by those who have experienced alte
         margin: 0.5rem 0 0 0;
         opacity: 0.8;
     }
-</style> 
+&lt;/style&gt; 
     </div>
     
     <footer class="site-footer">

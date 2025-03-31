@@ -6,14 +6,11 @@
     <title>Hearing Voices | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
     <!-- Use the ESM version of Supabase -->
-    <script type="module">
-        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-        console.log('Creating Supabase client with:', {
+    <script src="https://clerk.browser.accounts.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js"></script>
+    <script>
+        window.Clerk.init({
+            publishableKey: ''
         });
-        window.supabase = createClient(
-            'https://ykifhipjmptpqswsblmi.supabase.co',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlraWZoaXBqbXB0cHFzd3NibG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NTIsImV4cCI6MjA1NzU1NjY1Mn0.gvDlgrJHrdT6vWMBQaK8XirtlKSVDX5BvVrMreOfjpk'
-        )
     </script>
     <style>
         :root {
@@ -378,155 +375,155 @@
         </h1>
         
 
-        <div class="key-message">It's to be expected that the following exercises may be tricky at various points. Practice is required, journaling is recommended, alongside therapy and other supportive relationships.</div>
-<div class="press-pause">
-    <h2>Press Pause</h2>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Strengthen Insight</h3>
-What helped you notice you were/are hearing a voice? What helps you accept that you hear sounds others do not?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="strengthen-insight" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="strengthen-insight" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Mindfulness</h3>
-If you are experiencing a distressing voice, is it possible for you to try and pull your focus to your breathing for as long as you can?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="mindfulness" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="mindfulness" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Distress Tolerance</h3>
-Is it possible for you to experience the distressing messages from the voice without needing to react? The <a href="https://dbt.tools/distress_tolerance/index.php">skills discussed here</a> will likely be helpful.</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="distress-tolerance" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="distress-tolerance" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Imagination</h3>
-Can you imagine a shell between you and your voices? A membrane they could bounce off of that allows you to watch them but not to have to engage them? Like you're watching waves crash in the ocean. What does this boundary feel like?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="imagination" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="imagination" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Your Own Idea</h3>
-What feels like it would help you create a sense of safety from which to get curious about your voices?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="your-own-idea" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="your-own-idea" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-</div>
-<div class="activate-curiosity">
-    <h2>Activate Curiosity</h2>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>Where do the voices come from?</h3>
-Can you identify familiar sounds or themes in the voices?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="where-do-the-voices-come-from" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="where-do-the-voices-come-from" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>Why do the voices come from that place?</h3>
-Voices are one way the body tries to protect itself. Can you wonder about why your body chooses this specific way to take care of you?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="why-do-the-voices-come-from-that-place" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="why-do-the-voices-come-from-that-place" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>Acceptance</h3>
-Can you cherish the hurt in the self the voices call back to?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="acceptance" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="acceptance" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>What other questions or exercises can help you?</h3>
-What other practices or reflections would help you better live with your voices?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="what-other-questions-or-exercises-can-help-you" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="what-other-questions-or-exercises-can-help-you" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-</div>
-<script type="module">
+        &lt;div class=&quot;key-message&quot;&gt;It&amp;#39;s to be expected that the following exercises may be tricky at various points. Practice is required, journaling is recommended, alongside therapy and other supportive relationships.&lt;/div&gt;
+&lt;div class=&quot;press-pause&quot;&gt;
+    &lt;h2&gt;Press Pause&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Strengthen Insight&lt;/h3&gt;
+What helped you notice you were/are hearing a voice? What helps you accept that you hear sounds others do not?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;strengthen-insight&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;strengthen-insight&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Mindfulness&lt;/h3&gt;
+If you are experiencing a distressing voice, is it possible for you to try and pull your focus to your breathing for as long as you can?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;mindfulness&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;mindfulness&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Distress Tolerance&lt;/h3&gt;
+Is it possible for you to experience the distressing messages from the voice without needing to react? The &amp;lt;a href=&amp;quot;https://dbt.tools/distress_tolerance/index.php&amp;quot;&amp;gt;skills discussed here&amp;lt;/a&amp;gt; will likely be helpful.&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;distress-tolerance&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;distress-tolerance&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Imagination&lt;/h3&gt;
+Can you imagine a shell between you and your voices? A membrane they could bounce off of that allows you to watch them but not to have to engage them? Like you&#39;re watching waves crash in the ocean. What does this boundary feel like?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;imagination&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;imagination&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Your Own Idea&lt;/h3&gt;
+What feels like it would help you create a sense of safety from which to get curious about your voices?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;your-own-idea&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;your-own-idea&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;activate-curiosity&quot;&gt;
+    &lt;h2&gt;Activate Curiosity&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Where do the voices come from?&lt;/h3&gt;
+Can you identify familiar sounds or themes in the voices?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;where-do-the-voices-come-from&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;where-do-the-voices-come-from&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Why do the voices come from that place?&lt;/h3&gt;
+Voices are one way the body tries to protect itself. Can you wonder about why your body chooses this specific way to take care of you?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;why-do-the-voices-come-from-that-place&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;why-do-the-voices-come-from-that-place&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Acceptance&lt;/h3&gt;
+Can you cherish the hurt in the self the voices call back to?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;acceptance&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;acceptance&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;What other questions or exercises can help you?&lt;/h3&gt;
+What other practices or reflections would help you better live with your voices?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;what-other-questions-or-exercises-can-help-you&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;what-other-questions-or-exercises-can-help-you&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;script type=&quot;module&quot;&gt;
     // Get data from front matter
-    const pressPause = [{"title":"Strengthen Insight","content":"What helped you notice you were/are hearing a voice? What helps you accept that you hear sounds others do not?\n"},{"title":"Mindfulness","content":"If you are experiencing a distressing voice, is it possible for you to try and pull your focus to your breathing for as long as you can?\n"},{"title":"Distress Tolerance","content":"Is it possible for you to experience the distressing messages from the voice without needing to react? The <a href=\"https://dbt.tools/distress_tolerance/index.php\">skills discussed here</a> will likely be helpful.\n"},{"title":"Imagination","content":"Can you imagine a shell between you and your voices? A membrane they could bounce off of that allows you to watch them but not to have to engage them? Like you're watching waves crash in the ocean. What does this boundary feel like?\n"},{"title":"Your Own Idea","content":"What feels like it would help you create a sense of safety from which to get curious about your voices?\n"}];
-    const activateCuriosity = [{"title":"Where do the voices come from?","content":"Can you identify familiar sounds or themes in the voices?\n"},{"title":"Why do the voices come from that place?","content":"Voices are one way the body tries to protect itself. Can you wonder about why your body chooses this specific way to take care of you?\n"},{"title":"Acceptance","content":"Can you cherish the hurt in the self the voices call back to?\n"},{"title":"What other questions or exercises can help you?","content":"What other practices or reflections would help you better live with your voices?\n"}];
+    const pressPause = [{&amp;quot;title&amp;quot;:&amp;quot;Strengthen Insight&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;What helped you notice you were/are hearing a voice? What helps you accept that you hear sounds others do not?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Mindfulness&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;If you are experiencing a distressing voice, is it possible for you to try and pull your focus to your breathing for as long as you can?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Distress Tolerance&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Is it possible for you to experience the distressing messages from the voice without needing to react? The &amp;lt;a href=&amp;#92;&amp;quot;https://dbt.tools/distress_tolerance/index.php&amp;#92;&amp;quot;&amp;gt;skills discussed here&amp;lt;/a&amp;gt; will likely be helpful.&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Imagination&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Can you imagine a shell between you and your voices? A membrane they could bounce off of that allows you to watch them but not to have to engage them? Like you&amp;#39;re watching waves crash in the ocean. What does this boundary feel like?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Your Own Idea&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;What feels like it would help you create a sense of safety from which to get curious about your voices?&amp;#92;n&amp;quot;}];
+    const activateCuriosity = [{&amp;quot;title&amp;quot;:&amp;quot;Where do the voices come from?&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Can you identify familiar sounds or themes in the voices?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Why do the voices come from that place?&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Voices are one way the body tries to protect itself. Can you wonder about why your body chooses this specific way to take care of you?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Acceptance&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Can you cherish the hurt in the self the voices call back to?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;What other questions or exercises can help you?&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;What other practices or reflections would help you better live with your voices?&amp;#92;n&amp;quot;}];
 
     // Debug Supabase connection
-    console.log('Checking Supabase connection...');
+    console.log(&#39;Checking Supabase connection...&#39;);
     const { data: testData, error: testError } = await supabase
-        .from('prompts')
-        .select('*')
+        .from(&#39;prompts&#39;)
+        .select(&#39;*&#39;)
         .limit(1);
     
     if (testError) {
-        console.error('Supabase connection error:', testError);
+        console.error(&#39;Supabase connection error:&#39;, testError);
     } else {
-        console.log('Supabase connection successful, sample data:', testData);
+        console.log(&#39;Supabase connection successful, sample data:&#39;, testData);
     }
 
     // Check if user is authenticated
@@ -540,95 +537,95 @@ What other practices or reflections would help you better live with your voices?
         // First, get or create prompts
         async function getPrompts() {
             try {
-                console.log('Starting getOrCreatePrompts');
+                console.log(&#39;Starting getOrCreatePrompts&#39;);
                 // Get all prompts for this page at once
                 const { data: prompts, error } = await supabase
-                    .from('prompts')
-                    .select('*')
-                    .eq('page_type', 'hearing_voices')
-                    .order('section_type', { ascending: true })
-                    .order('display_order', { ascending: true });
+                    .from(&#39;prompts&#39;)
+                    .select(&#39;*&#39;)
+                    .eq(&#39;page_type&#39;, &#39;hearing_voices&#39;)
+                    .order(&#39;section_type&#39;, { ascending: true })
+                    .order(&#39;display_order&#39;, { ascending: true });
                 
                 if (error) {
-                    console.error('Error fetching prompts:', error);
+                    console.error(&#39;Error fetching prompts:&#39;, error);
                     return;
                 }
                 
-                console.log('All prompts:', prompts);
+                console.log(&#39;All prompts:&#39;, prompts);
                 
                 // Map prompts to their titles
-                prompts.forEach(prompt => {
+                prompts.forEach(prompt =&gt; {
                     // Only take the first prompt if there are duplicates
                     if (!promptIds[prompt.title]) {
                         promptIds[prompt.title] = prompt.id;
                     }
                 });
                 
-                console.log('Mapped promptIds:', promptIds);
+                console.log(&#39;Mapped promptIds:&#39;, promptIds);
                 
             } catch (error) {
-                console.error('Error in getOrCreatePrompts:', error);
-                console.error('Stack:', error.stack);
+                console.error(&#39;Error in getOrCreatePrompts:&#39;, error);
+                console.error(&#39;Stack:&#39;, error.stack);
             }
         }
 
         // Wait for prompts to be ready before showing UI
         await getPrompts();
-        console.log('Prompts loaded:', promptIds);
+        console.log(&#39;Prompts loaded:&#39;, promptIds);
 
         // Show both journal entries and sidebars for signed-in users
-        document.querySelectorAll('.journal-entry').forEach(entry => {
-            entry.style.display = 'block';
-            console.log('Showing journal entry:', entry.dataset.question);
+        document.querySelectorAll(&#39;.journal-entry&#39;).forEach(entry =&gt; {
+            entry.style.display = &#39;block&#39;;
+            console.log(&#39;Showing journal entry:&#39;, entry.dataset.question);
         });
-        document.querySelectorAll('.past-entries-sidebar').forEach(sidebar => {
-            sidebar.style.display = 'block';
-            console.log('Showing sidebar:', sidebar.dataset.question);
+        document.querySelectorAll(&#39;.past-entries-sidebar&#39;).forEach(sidebar =&gt; {
+            sidebar.style.display = &#39;block&#39;;
+            console.log(&#39;Showing sidebar:&#39;, sidebar.dataset.question);
         });
 
         // Double check that elements exist
-        const journalEntries = document.querySelectorAll('.journal-entry');
-        const sidebars = document.querySelectorAll('.past-entries-sidebar');
+        const journalEntries = document.querySelectorAll(&#39;.journal-entry&#39;);
+        const sidebars = document.querySelectorAll(&#39;.past-entries-sidebar&#39;);
         console.log(`Found ${journalEntries.length} journal entries and ${sidebars.length} sidebars`);
 
         // Load past entries
         async function loadEntries() {
             const { data: entries, error } = await supabase
-                .from('responses')
-                .select('*')
-                .eq('user_id', session.user.id)
-                .order('created_at', { ascending: false });
+                .from(&#39;responses&#39;)
+                .select(&#39;*&#39;)
+                .eq(&#39;user_id&#39;, session.user.id)
+                .order(&#39;created_at&#39;, { ascending: false });
 
             if (error) {
-                console.error('Error loading entries:', error);
+                console.error(&#39;Error loading entries:&#39;, error);
                 return;
             }
 
             // Clear existing entries before loading
-            document.querySelectorAll('.past-entries').forEach(container => {
-                container.innerHTML = '';
+            document.querySelectorAll(&#39;.past-entries&#39;).forEach(container =&gt; {
+                container.innerHTML = &#39;&#39;;
             });
 
-            entries.forEach(entry => {
-                const matchingPrompt = Object.entries(promptIds).find(([title, id]) => id === entry.prompt_id);
+            entries.forEach(entry =&gt; {
+                const matchingPrompt = Object.entries(promptIds).find(([title, id]) =&gt; id === entry.prompt_id);
                 if (!matchingPrompt) {
-                    console.error('Could not find prompt for prompt_id:', entry.prompt_id);
+                    console.error(&#39;Could not find prompt for prompt_id:&#39;, entry.prompt_id);
                     return;
                 }
                 const [promptTitle, promptId] = matchingPrompt;
                 
-                const section = pressPause.find(item => item.title === promptTitle) 
-                    ? 'press_pause' 
-                    : 'activate_curiosity';
+                const section = pressPause.find(item =&gt; item.title === promptTitle) 
+                    ? &#39;press_pause&#39; 
+                    : &#39;activate_curiosity&#39;;
                 
-                const questionSlug = promptTitle.toLowerCase().replace(/\s+/g, '-');
+                const questionSlug = promptTitle.toLowerCase().replace(/&#92;s+/g, &#39;-&#39;);
                 
                 // Try different selector combinations
                 let container = null;
                 const selectors = [
-                    `[data-section="${section}"][data-question="${questionSlug}"] .past-entries-sidebar .past-entries`,
-                    `.past-entries-sidebar[data-section="${section}"][data-question="${questionSlug}"] .past-entries`,
-                    `.journal-entry[data-section="${section}"][data-question="${questionSlug}"] ~ .past-entries-sidebar .past-entries`
+                    `[data-section=&quot;${section}&quot;][data-question=&quot;${questionSlug}&quot;] .past-entries-sidebar .past-entries`,
+                    `.past-entries-sidebar[data-section=&quot;${section}&quot;][data-question=&quot;${questionSlug}&quot;] .past-entries`,
+                    `.journal-entry[data-section=&quot;${section}&quot;][data-question=&quot;${questionSlug}&quot;] ~ .past-entries-sidebar .past-entries`
                 ];
                 
                 for (const selector of selectors) {
@@ -636,98 +633,98 @@ What other practices or reflections would help you better live with your voices?
                     if (container) break;
                 }
                 
-                console.log('Looking for container with:', {
+                console.log(&#39;Looking for container with:&#39;, {
                     promptTitle,
                     questionSlug,
                     section,
                     triedSelectors: selectors,
-                    allContainers: Array.from(document.querySelectorAll('.past-entries')).map(el => ({
-                        section: el.closest('[data-section]')?.dataset.section,
-                        question: el.closest('[data-question]')?.dataset.question,
-                        html: el.outerHTML.substring(0, 100) + '...'
+                    allContainers: Array.from(document.querySelectorAll(&#39;.past-entries&#39;)).map(el =&gt; ({
+                        section: el.closest(&#39;[data-section]&#39;)?.dataset.section,
+                        question: el.closest(&#39;[data-question]&#39;)?.dataset.question,
+                        html: el.outerHTML.substring(0, 100) + &#39;...&#39;
                     })),
                     found: !!container
                 });
 
                 if (container) {
-                    const entryEl = document.createElement('div');
-                    entryEl.className = 'past-entry';
+                    const entryEl = document.createElement(&#39;div&#39;);
+                    entryEl.className = &#39;past-entry&#39;;
                     entryEl.dataset.entryId = entry.id;
                     entryEl.innerHTML = `
-                        <div class="entry-date">${new Date(entry.created_at).toLocaleDateString()}</div>
-                        <div class="entry-content" contenteditable="true">${escapeHtml(entry.content)}</div>
-                        <div class="entry-actions">
-                            <button class="save-edit" style="display: none;">Save</button>
-                            <button class="cancel-edit" style="display: none;">Cancel</button>
-                            <button class="delete-edit" style="display: none;">Delete</button>
-                        </div>
+                        &lt;div class=&quot;entry-date&quot;&gt;${new Date(entry.created_at).toLocaleDateString()}&lt;/div&gt;
+                        &lt;div class=&quot;entry-content&quot; contenteditable=&quot;true&quot;&gt;${escapeHtml(entry.content)}&lt;/div&gt;
+                        &lt;div class=&quot;entry-actions&quot;&gt;
+                            &lt;button class=&quot;save-edit&quot; style=&quot;display: none;&quot;&gt;Save&lt;/button&gt;
+                            &lt;button class=&quot;cancel-edit&quot; style=&quot;display: none;&quot;&gt;Cancel&lt;/button&gt;
+                            &lt;button class=&quot;delete-edit&quot; style=&quot;display: none;&quot;&gt;Delete&lt;/button&gt;
+                        &lt;/div&gt;
                     `;
 
                     // Store original content for cancel functionality
-                    const contentEl = entryEl.querySelector('.entry-content');
+                    const contentEl = entryEl.querySelector(&#39;.entry-content&#39;);
                     let originalContent = entry.content;
                     
                     // Show/hide buttons when editing
-                    contentEl.addEventListener('focus', () => {
-                        entryEl.querySelector('.save-edit').style.display = 'inline-block';
-                        entryEl.querySelector('.cancel-edit').style.display = 'inline-block';
-                        entryEl.querySelector('.delete-edit').style.display = 'inline-block';
+                    contentEl.addEventListener(&#39;focus&#39;, () =&gt; {
+                        entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;inline-block&#39;;
+                        entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;inline-block&#39;;
+                        entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;inline-block&#39;;
                     });
                     
-                    contentEl.addEventListener('blur', (e) => {
-                        // Don't hide if clicking the action buttons
-                        if (e.relatedTarget && e.relatedTarget.closest('.entry-actions')) {
+                    contentEl.addEventListener(&#39;blur&#39;, (e) =&gt; {
+                        // Don&#39;t hide if clicking the action buttons
+                        if (e.relatedTarget &amp;&amp; e.relatedTarget.closest(&#39;.entry-actions&#39;)) {
                             return;
                         }
                         // Hide buttons if clicking outside
-                        if (!e.relatedTarget || !e.relatedTarget.closest('.past-entry')) {
-                            setTimeout(() => {
-                                if (!document.activeElement.closest('.past-entry')) {
-                                    entryEl.querySelector('.save-edit').style.display = 'none';
-                                    entryEl.querySelector('.cancel-edit').style.display = 'none';
-                                    entryEl.querySelector('.delete-edit').style.display = 'none';
+                        if (!e.relatedTarget || !e.relatedTarget.closest(&#39;.past-entry&#39;)) {
+                            setTimeout(() =&gt; {
+                                if (!document.activeElement.closest(&#39;.past-entry&#39;)) {
+                                    entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;none&#39;;
+                                    entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;none&#39;;
+                                    entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;none&#39;;
                                 }
                             }, 100);
                         }
                     });
 
                     // Save edit
-                    entryEl.querySelector('.save-edit').addEventListener('click', async () => {
+                    entryEl.querySelector(&#39;.save-edit&#39;).addEventListener(&#39;click&#39;, async () =&gt; {
                         const newContent = contentEl.textContent;
                         const { error } = await supabase
-                            .from('responses')
+                            .from(&#39;responses&#39;)
                             .update({ content: newContent })
-                            .eq('id', entry.id);
+                            .eq(&#39;id&#39;, entry.id);
                             
                         if (error) {
-                            console.error('Error updating entry:', error);
+                            console.error(&#39;Error updating entry:&#39;, error);
                             contentEl.textContent = originalContent;
                         } else {
                             originalContent = newContent;
-                            entryEl.querySelector('.save-edit').style.display = 'none';
-                            entryEl.querySelector('.cancel-edit').style.display = 'none';
-                            entryEl.querySelector('.delete-edit').style.display = 'none';
+                            entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;none&#39;;
+                            entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;none&#39;;
+                            entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;none&#39;;
                         }
                     });
                     
                     // Cancel edit
-                    entryEl.querySelector('.cancel-edit').addEventListener('click', () => {
+                    entryEl.querySelector(&#39;.cancel-edit&#39;).addEventListener(&#39;click&#39;, () =&gt; {
                         contentEl.textContent = originalContent;
-                        entryEl.querySelector('.save-edit').style.display = 'none';
-                        entryEl.querySelector('.cancel-edit').style.display = 'none';
-                        entryEl.querySelector('.delete-edit').style.display = 'none';
+                        entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;none&#39;;
+                        entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;none&#39;;
+                        entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;none&#39;;
                     });
 
                     // Delete entry
-                    entryEl.querySelector('.delete-edit').addEventListener('click', async () => {
-                        if (confirm('Are you sure you want to delete this entry?')) {
+                    entryEl.querySelector(&#39;.delete-edit&#39;).addEventListener(&#39;click&#39;, async () =&gt; {
+                        if (confirm(&#39;Are you sure you want to delete this entry?&#39;)) {
                             const { error } = await supabase
-                                .from('responses')
+                                .from(&#39;responses&#39;)
                                 .delete()
-                                .eq('id', entry.id);
+                                .eq(&#39;id&#39;, entry.id);
                                 
                             if (error) {
-                                console.error('Error deleting entry:', error);
+                                console.error(&#39;Error deleting entry:&#39;, error);
                             } else {
                                 entryEl.remove();
                             }
@@ -736,7 +733,7 @@ What other practices or reflections would help you better live with your voices?
 
                     container.appendChild(entryEl);
                 } else {
-                    console.error('Could not find container for entry:', {
+                    console.error(&#39;Could not find container for entry:&#39;, {
                         promptTitle,
                         questionSlug,
                         section,
@@ -749,24 +746,24 @@ What other practices or reflections would help you better live with your voices?
 
         // Save new entry
         async function saveEntry(section, question, content) {
-            console.log('saveEntry called with:', { section, question, content });
-            console.log('Looking up prompt ID for:', question);
-            console.log('Available promptIds:', promptIds);
+            console.log(&#39;saveEntry called with:&#39;, { section, question, content });
+            console.log(&#39;Looking up prompt ID for:&#39;, question);
+            console.log(&#39;Available promptIds:&#39;, promptIds);
             const promptId = promptIds[question];  // Use original case
             if (!promptId) {
-                console.error('No prompt ID found for question:', question);
-                console.error('Available questions:', Object.keys(promptIds));
+                console.error(&#39;No prompt ID found for question:&#39;, question);
+                console.error(&#39;Available questions:&#39;, Object.keys(promptIds));
                 return false;
             }
 
-            console.log('Attempting to save to responses table:', { 
+            console.log(&#39;Attempting to save to responses table:&#39;, { 
                 content,
                 prompt_id: promptId,
                 user_id: session.user.id 
             });
 
             const { data, error } = await supabase
-                .from('responses')
+                .from(&#39;responses&#39;)
                 .insert([
                     { 
                         content: content,
@@ -777,7 +774,7 @@ What other practices or reflections would help you better live with your voices?
                 .select();
 
             if (error) {
-                console.error('Error saving entry:', {
+                console.error(&#39;Error saving entry:&#39;, {
                     message: error.message,
                     details: error.details,
                     hint: error.hint,
@@ -786,77 +783,77 @@ What other practices or reflections would help you better live with your voices?
                 return false;
             }
 
-            console.log('Entry saved successfully:', data);
+            console.log(&#39;Entry saved successfully:&#39;, data);
             // Add new entry to UI immediately
-            const questionSlug = question.toLowerCase().replace(/\s+/g, '-');
+            const questionSlug = question.toLowerCase().replace(/&#92;s+/g, &#39;-&#39;);
             const pastEntriesContainer = document.querySelector(
-                `[data-section="${section}"][data-question="${questionSlug}"] .past-entries-sidebar .past-entries`
+                `[data-section=&quot;${section}&quot;][data-question=&quot;${questionSlug}&quot;] .past-entries-sidebar .past-entries`
             );
             
             if (pastEntriesContainer) {
-                const entryEl = document.createElement('div');
-                entryEl.className = 'past-entry';
+                const entryEl = document.createElement(&#39;div&#39;);
+                entryEl.className = &#39;past-entry&#39;;
                 entryEl.dataset.entryId = data[0].id;
                 entryEl.innerHTML = `
-                    <div class="entry-date">${new Date().toLocaleDateString()}</div>
-                    <div class="entry-content" contenteditable="true">${escapeHtml(content)}</div>
-                    <div class="entry-actions">
-                        <button class="save-edit" style="display: none;">Save</button>
-                        <button class="cancel-edit" style="display: none;">Cancel</button>
-                        <button class="delete-edit" style="display: none;">Delete</button>
-                    </div>
+                    &lt;div class=&quot;entry-date&quot;&gt;${new Date().toLocaleDateString()}&lt;/div&gt;
+                    &lt;div class=&quot;entry-content&quot; contenteditable=&quot;true&quot;&gt;${escapeHtml(content)}&lt;/div&gt;
+                    &lt;div class=&quot;entry-actions&quot;&gt;
+                        &lt;button class=&quot;save-edit&quot; style=&quot;display: none;&quot;&gt;Save&lt;/button&gt;
+                        &lt;button class=&quot;cancel-edit&quot; style=&quot;display: none;&quot;&gt;Cancel&lt;/button&gt;
+                        &lt;button class=&quot;delete-edit&quot; style=&quot;display: none;&quot;&gt;Delete&lt;/button&gt;
+                    &lt;/div&gt;
                 `;
                 
                 // Add the same edit functionality as in loadEntries
-                const contentEl = entryEl.querySelector('.entry-content');
+                const contentEl = entryEl.querySelector(&#39;.entry-content&#39;);
                 let originalContent = content;
                 
-                contentEl.addEventListener('focus', () => {
-                    entryEl.querySelector('.save-edit').style.display = 'inline-block';
-                    entryEl.querySelector('.cancel-edit').style.display = 'inline-block';
-                    entryEl.querySelector('.delete-edit').style.display = 'inline-block';
+                contentEl.addEventListener(&#39;focus&#39;, () =&gt; {
+                    entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;inline-block&#39;;
+                    entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;inline-block&#39;;
+                    entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;inline-block&#39;;
                 });
                 
-                contentEl.addEventListener('blur', (e) => {
-                    // Don't hide if clicking the action buttons
-                    if (e.relatedTarget && e.relatedTarget.closest('.entry-actions')) {
+                contentEl.addEventListener(&#39;blur&#39;, (e) =&gt; {
+                    // Don&#39;t hide if clicking the action buttons
+                    if (e.relatedTarget &amp;&amp; e.relatedTarget.closest(&#39;.entry-actions&#39;)) {
                         return;
                     }
                     // Hide buttons if clicking outside
-                    if (!e.relatedTarget || !e.relatedTarget.closest('.past-entry')) {
-                        setTimeout(() => {
-                            if (!document.activeElement.closest('.past-entry')) {
-                                entryEl.querySelector('.save-edit').style.display = 'none';
-                                entryEl.querySelector('.cancel-edit').style.display = 'none';
-                                entryEl.querySelector('.delete-edit').style.display = 'none';
+                    if (!e.relatedTarget || !e.relatedTarget.closest(&#39;.past-entry&#39;)) {
+                        setTimeout(() =&gt; {
+                            if (!document.activeElement.closest(&#39;.past-entry&#39;)) {
+                                entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;none&#39;;
+                                entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;none&#39;;
+                                entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;none&#39;;
                             }
                         }, 100);
                     }
                 });
                 
-                entryEl.querySelector('.save-edit').addEventListener('click', async () => {
+                entryEl.querySelector(&#39;.save-edit&#39;).addEventListener(&#39;click&#39;, async () =&gt; {
                     const newContent = contentEl.textContent;
                     const { error } = await supabase
-                        .from('responses')
+                        .from(&#39;responses&#39;)
                         .update({ content: newContent })
-                        .eq('id', data[0].id);
+                        .eq(&#39;id&#39;, data[0].id);
                         
                     if (error) {
-                        console.error('Error updating entry:', error);
+                        console.error(&#39;Error updating entry:&#39;, error);
                         contentEl.textContent = originalContent;
                     } else {
                         originalContent = newContent;
-                        entryEl.querySelector('.save-edit').style.display = 'none';
-                        entryEl.querySelector('.cancel-edit').style.display = 'none';
-                        entryEl.querySelector('.delete-edit').style.display = 'none';
+                        entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;none&#39;;
+                        entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;none&#39;;
+                        entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;none&#39;;
                     }
                 });
                 
-                entryEl.querySelector('.cancel-edit').addEventListener('click', () => {
+                entryEl.querySelector(&#39;.cancel-edit&#39;).addEventListener(&#39;click&#39;, () =&gt; {
                     contentEl.textContent = originalContent;
-                    entryEl.querySelector('.save-edit').style.display = 'none';
-                    entryEl.querySelector('.cancel-edit').style.display = 'none';
-                    entryEl.querySelector('.delete-edit').style.display = 'none';
+                    entryEl.querySelector(&#39;.save-edit&#39;).style.display = &#39;none&#39;;
+                    entryEl.querySelector(&#39;.cancel-edit&#39;).style.display = &#39;none&#39;;
+                    entryEl.querySelector(&#39;.delete-edit&#39;).style.display = &#39;none&#39;;
                 });
                 
                 // Insert at the top of the list
@@ -869,26 +866,26 @@ What other practices or reflections would help you better live with your voices?
         // Helper function to escape HTML
         function escapeHtml(unsafe) {
             return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+                .replace(/&amp;/g, &quot;&amp;amp;&quot;)
+                .replace(/&lt;/g, &quot;&amp;lt;&quot;)
+                .replace(/&gt;/g, &quot;&amp;gt;&quot;)
+                .replace(/&quot;/g, &quot;&amp;quot;&quot;)
+                .replace(/&#39;/g, &quot;&amp;#039;&quot;);
         }
 
         // Add event listeners to save buttons
-        document.querySelectorAll('.save-entry').forEach(button => {
-            button.addEventListener('click', async () => {
-                const journalEntry = button.closest('.journal-entry')
-                const textarea = journalEntry.querySelector('textarea')
+        document.querySelectorAll(&#39;.save-entry&#39;).forEach(button =&gt; {
+            button.addEventListener(&#39;click&#39;, async () =&gt; {
+                const journalEntry = button.closest(&#39;.journal-entry&#39;)
+                const textarea = journalEntry.querySelector(&#39;textarea&#39;)
                 const section = journalEntry.dataset.section
                 // Find the original title from the slug
                 const questionSlug = journalEntry.dataset.question
-                const items = section === 'press_pause' ? pressPause : activateCuriosity
-                const originalQuestion = items.find(item => item.title.toLowerCase().replace(/\s+/g, '-') === questionSlug)?.title
+                const items = section === &#39;press_pause&#39; ? pressPause : activateCuriosity
+                const originalQuestion = items.find(item =&gt; item.title.toLowerCase().replace(/&#92;s+/g, &#39;-&#39;) === questionSlug)?.title
                 
                 if (!originalQuestion) {
-                    console.error('Could not find original question for slug:', questionSlug)
+                    console.error(&#39;Could not find original question for slug:&#39;, questionSlug)
                     return
                 }
 
@@ -898,17 +895,17 @@ What other practices or reflections would help you better live with your voices?
                     const success = await saveEntry(section, originalQuestion, content)
                     if (success) {
                         // Add new entry to UI immediately
-                        const pastEntriesContainer = document.querySelector(`[data-section="${section}"][data-question="${questionSlug}"] .past-entries-sidebar .past-entries`)
+                        const pastEntriesContainer = document.querySelector(`[data-section=&quot;${section}&quot;][data-question=&quot;${questionSlug}&quot;] .past-entries-sidebar .past-entries`)
                         if (pastEntriesContainer) {
-                            const entryEl = document.createElement('div')
-                            entryEl.className = 'past-entry'
+                            const entryEl = document.createElement(&#39;div&#39;)
+                            entryEl.className = &#39;past-entry&#39;
                             entryEl.innerHTML = `
-                                <div class="entry-date">${new Date().toLocaleDateString()}</div>
-                                <div class="entry-content">${escapeHtml(content)}</div>
+                                &lt;div class=&quot;entry-date&quot;&gt;${new Date().toLocaleDateString()}&lt;/div&gt;
+                                &lt;div class=&quot;entry-content&quot;&gt;${escapeHtml(content)}&lt;/div&gt;
                             `
                             // Insert at the top of the list
                             pastEntriesContainer.insertBefore(entryEl, pastEntriesContainer.firstChild)
-                            textarea.value = ''
+                            textarea.value = &#39;&#39;
                         }
                     }
                 }
@@ -918,7 +915,7 @@ What other practices or reflections would help you better live with your voices?
         // Load entries on page load
         loadEntries()
     }
-</script>
+&lt;/script&gt;
 
     </div>
     

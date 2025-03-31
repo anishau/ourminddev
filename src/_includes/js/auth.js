@@ -24,6 +24,7 @@ export function AuthUI({ container }) {
         <button type="submit">Sign In</button>
       </form>
       <p>Don't have an account? <a href="#" id="showSignUp">Sign Up</a></p>
+      <p><a href="#" id="showForgotPassword">Forgot Password?</a></p>
     </div>
 
     <div class="auth-form hidden" id="signUpForm">
@@ -41,23 +42,53 @@ export function AuthUI({ container }) {
       </form>
       <p>Already have an account? <a href="#" id="showSignIn">Sign In</a></p>
     </div>
+
+    <div class="auth-form hidden" id="forgotPasswordForm">
+      <h2>Reset Password</h2>
+      <form id="resetForm">
+        <div class="form-group">
+          <label for="resetEmail">Email</label>
+          <input type="email" id="resetEmail" name="email" required>
+        </div>
+        <button type="submit">Send Reset Link</button>
+      </form>
+      <p><a href="#" id="backToSignIn">Back to Sign In</a></p>
+    </div>
   `
 
   const signInForm = container.querySelector('#signInForm')
   const signUpForm = container.querySelector('#signUpForm')
+  const forgotPasswordForm = container.querySelector('#forgotPasswordForm')
   const showSignUpLink = container.querySelector('#showSignUp')
   const showSignInLink = container.querySelector('#showSignIn')
+  const showForgotPasswordLink = container.querySelector('#showForgotPassword')
+  const backToSignInLink = container.querySelector('#backToSignIn')
 
   // Toggle between forms
   showSignUpLink.addEventListener('click', (e) => {
     e.preventDefault()
     signInForm.classList.add('hidden')
     signUpForm.classList.remove('hidden')
+    forgotPasswordForm.classList.add('hidden')
   })
 
   showSignInLink.addEventListener('click', (e) => {
     e.preventDefault()
     signUpForm.classList.add('hidden')
+    signInForm.classList.remove('hidden')
+    forgotPasswordForm.classList.add('hidden')
+  })
+
+  showForgotPasswordLink.addEventListener('click', (e) => {
+    e.preventDefault()
+    signInForm.classList.add('hidden')
+    signUpForm.classList.add('hidden')
+    forgotPasswordForm.classList.remove('hidden')
+  })
+
+  backToSignInLink.addEventListener('click', (e) => {
+    e.preventDefault()
+    forgotPasswordForm.classList.add('hidden')
     signInForm.classList.remove('hidden')
   })
 
@@ -125,6 +156,28 @@ export function AuthUI({ container }) {
       if (error) throw error
     } catch (error) {
       console.error('Error signing in with Google:', error.message)
+    }
+  })
+
+  // Handle Password Reset Request
+  container.querySelector('#resetForm').addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const email = container.querySelector('#resetEmail').value
+    
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + '/reset-password'
+      })
+      
+      if (error) throw error
+      
+      alert('Check your email for the password reset link')
+      // Switch back to sign in form
+      forgotPasswordForm.classList.add('hidden')
+      signInForm.classList.remove('hidden')
+    } catch (error) {
+      console.error('Error requesting password reset:', error.message)
+      alert(error.message)
     }
   })
 

@@ -6,14 +6,11 @@
     <title>Paranoia | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
     <!-- Use the ESM version of Supabase -->
-    <script type="module">
-        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-        console.log('Creating Supabase client with:', {
+    <script src="https://clerk.browser.accounts.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js"></script>
+    <script>
+        window.Clerk.init({
+            publishableKey: ''
         });
-        window.supabase = createClient(
-            'https://ykifhipjmptpqswsblmi.supabase.co',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlraWZoaXBqbXB0cHFzd3NibG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NTIsImV4cCI6MjA1NzU1NjY1Mn0.gvDlgrJHrdT6vWMBQaK8XirtlKSVDX5BvVrMreOfjpk'
-        )
     </script>
     <style>
         :root {
@@ -378,146 +375,146 @@
         </h1>
         
 
-        <div class="key-message">It's to be expected that the following excercises may be tricky at various points. Practice is required, journaling is recommended, alongside therapy and other supportive relationships.</div>
-<div class="press-pause">
-    <h2>Press Pause</h2>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Strengthen Insight</h3>
-When you are wondering if others are trying to hurt you, don't like you, etc. what helps you consider that this may be paranoia?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="strengthen-insight" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="strengthen-insight" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Stay With The Feeling</h3>
-When experiencing a fear that others may want to hurt you, don't like you, etc., is it possible to teach yourself to stay with that feeling without acting on it?
-Skills like <a href="https://dbt.tools/distress_tolerance/index.php">distress tolerance</a> may be especially useful.</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="stay-with-the-feeling" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="stay-with-the-feeling" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Broaden Your Perspective</h3>
+        &lt;div class=&quot;key-message&quot;&gt;It&amp;#39;s to be expected that the following excercises may be tricky at various points. Practice is required, journaling is recommended, alongside therapy and other supportive relationships.&lt;/div&gt;
+&lt;div class=&quot;press-pause&quot;&gt;
+    &lt;h2&gt;Press Pause&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Strengthen Insight&lt;/h3&gt;
+When you are wondering if others are trying to hurt you, don&#39;t like you, etc. what helps you consider that this may be paranoia?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;strengthen-insight&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;strengthen-insight&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Stay With The Feeling&lt;/h3&gt;
+When experiencing a fear that others may want to hurt you, don&#39;t like you, etc., is it possible to teach yourself to stay with that feeling without acting on it?
+Skills like &amp;lt;a href=&amp;quot;https://dbt.tools/distress_tolerance/index.php&amp;quot;&amp;gt;distress tolerance&amp;lt;/a&amp;gt; may be especially useful.&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;stay-with-the-feeling&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;stay-with-the-feeling&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Broaden Your Perspective&lt;/h3&gt;
 Once you can find some presence of mind within that space, is it possible to consider alternatives? That while people may be trying to hurt you, they also may be trying to help you? Or they may be neutral towards you.
-Try and hold room for this breadth of perspective as much as you can.</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="broaden-your-perspective" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="broaden-your-perspective" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Be With Ambiguity</h3>
+Try and hold room for this breadth of perspective as much as you can.&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;broaden-your-perspective&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;broaden-your-perspective&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Be With Ambiguity&lt;/h3&gt;
 Alternately, can you backtrack for a second, and recognize what situation caused you to feel paranoid?
-Often, paranoia is caused by stimuli that feel ambiguous in some way. Is it possible for you to sit with the ambiguity itself, without jumping to conclusions about it? What makes that hard?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="be-with-ambiguity" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="be-with-ambiguity" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="press-pause-section">
-<div class="section-content">
-<h3>Your Own Idea</h3>
-What feels like it would help you create a sense of safety from which to get curious about your paranoia?</p>
-<p><div class="journal-entry" data-section="press_pause" data-question="your-own-idea" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="press_pause" data-question="your-own-idea" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-</div>
-<div class="activate-curiosity">
-    <h2>Activate Curiosity</h2>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>Where does the paranoia locate itself?</h3>
-Why do you think that people are looking at you, talking about you, wanting to hurt you, etc? Are there aspects of yourself that make you self-conscious or embarrassed?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="where-does-the-paranoia-locate-itself" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="where-does-the-paranoia-locate-itself" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>Where are you vulnerable to paranoia?</h3>
-Why do these parts of yourself or your presentation make you self conscious, embarrassed, or hateful towards yourself?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="where-are-you-vulnerable-to-paranoia" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="where-are-you-vulnerable-to-paranoia" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>Acceptance</h3>
-Can you accept these aspects of yourself with pride and love for your uniqueness?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="acceptance" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="acceptance" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-<p><div class="activate-curiosity-section">
-<div class="section-content">
-<h3>What other questions or exercises can help you?</h3>
-What other practices or reflections would help you better live with your paranoia?</p>
-<p><div class="journal-entry" data-section="activate_curiosity" data-question="what-other-questions-or-exercises-can-help-you" style="display: none">
-<textarea placeholder="Write your reflections here..."></textarea>
-<button class="save-entry">Save</button>
-</div>
-</div>
-<div class="past-entries-sidebar" data-section="activate_curiosity" data-question="what-other-questions-or-exercises-can-help-you" style="display: none">
-<h4>Previous Entries</h4>
-<div class="past-entries"></div>
-</div>
-</div></p>
-</div>
-<script type="module">
+Often, paranoia is caused by stimuli that feel ambiguous in some way. Is it possible for you to sit with the ambiguity itself, without jumping to conclusions about it? What makes that hard?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;be-with-ambiguity&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;be-with-ambiguity&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;press-pause-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Your Own Idea&lt;/h3&gt;
+What feels like it would help you create a sense of safety from which to get curious about your paranoia?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;press_pause&quot; data-question=&quot;your-own-idea&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;press_pause&quot; data-question=&quot;your-own-idea&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;activate-curiosity&quot;&gt;
+    &lt;h2&gt;Activate Curiosity&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Where does the paranoia locate itself?&lt;/h3&gt;
+Why do you think that people are looking at you, talking about you, wanting to hurt you, etc? Are there aspects of yourself that make you self-conscious or embarrassed?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;where-does-the-paranoia-locate-itself&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;where-does-the-paranoia-locate-itself&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Where are you vulnerable to paranoia?&lt;/h3&gt;
+Why do these parts of yourself or your presentation make you self conscious, embarrassed, or hateful towards yourself?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;where-are-you-vulnerable-to-paranoia&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;where-are-you-vulnerable-to-paranoia&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;Acceptance&lt;/h3&gt;
+Can you accept these aspects of yourself with pride and love for your uniqueness?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;acceptance&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;acceptance&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;activate-curiosity-section&quot;&gt;
+&lt;div class=&quot;section-content&quot;&gt;
+&lt;h3&gt;What other questions or exercises can help you?&lt;/h3&gt;
+What other practices or reflections would help you better live with your paranoia?&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;journal-entry&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;what-other-questions-or-exercises-can-help-you&quot; style=&quot;display: none&quot;&gt;
+&lt;textarea placeholder=&quot;Write your reflections here...&quot;&gt;&lt;/textarea&gt;
+&lt;button class=&quot;save-entry&quot;&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;past-entries-sidebar&quot; data-section=&quot;activate_curiosity&quot; data-question=&quot;what-other-questions-or-exercises-can-help-you&quot; style=&quot;display: none&quot;&gt;
+&lt;h4&gt;Previous Entries&lt;/h4&gt;
+&lt;div class=&quot;past-entries&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;script type=&quot;module&quot;&gt;
     // Get data from front matter
-    const pressPause = [{"title":"Strengthen Insight","content":"When you are wondering if others are trying to hurt you, don't like you, etc. what helps you consider that this may be paranoia?\n"},{"title":"Stay With The Feeling","content":"When experiencing a fear that others may want to hurt you, don't like you, etc., is it possible to teach yourself to stay with that feeling without acting on it?\nSkills like <a href=\"https://dbt.tools/distress_tolerance/index.php\">distress tolerance</a> may be especially useful.\n"},{"title":"Broaden Your Perspective","content":"Once you can find some presence of mind within that space, is it possible to consider alternatives? That while people may be trying to hurt you, they also may be trying to help you? Or they may be neutral towards you.\nTry and hold room for this breadth of perspective as much as you can.\n"},{"title":"Be With Ambiguity","content":"Alternately, can you backtrack for a second, and recognize what situation caused you to feel paranoid?\nOften, paranoia is caused by stimuli that feel ambiguous in some way. Is it possible for you to sit with the ambiguity itself, without jumping to conclusions about it? What makes that hard?\n"},{"title":"Your Own Idea","content":"What feels like it would help you create a sense of safety from which to get curious about your paranoia?\n"}];
-    const activateCuriosity = [{"title":"Where does the paranoia locate itself?","content":"Why do you think that people are looking at you, talking about you, wanting to hurt you, etc? Are there aspects of yourself that make you self-conscious or embarrassed?\n"},{"title":"Where are you vulnerable to paranoia?","content":"Why do these parts of yourself or your presentation make you self conscious, embarrassed, or hateful towards yourself?\n"},{"title":"Acceptance","content":"Can you accept these aspects of yourself with pride and love for your uniqueness?\n"},{"title":"What other questions or exercises can help you?","content":"What other practices or reflections would help you better live with your paranoia?\n"}];
+    const pressPause = [{&amp;quot;title&amp;quot;:&amp;quot;Strengthen Insight&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;When you are wondering if others are trying to hurt you, don&amp;#39;t like you, etc. what helps you consider that this may be paranoia?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Stay With The Feeling&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;When experiencing a fear that others may want to hurt you, don&amp;#39;t like you, etc., is it possible to teach yourself to stay with that feeling without acting on it?&amp;#92;nSkills like &amp;lt;a href=&amp;#92;&amp;quot;https://dbt.tools/distress_tolerance/index.php&amp;#92;&amp;quot;&amp;gt;distress tolerance&amp;lt;/a&amp;gt; may be especially useful.&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Broaden Your Perspective&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Once you can find some presence of mind within that space, is it possible to consider alternatives? That while people may be trying to hurt you, they also may be trying to help you? Or they may be neutral towards you.&amp;#92;nTry and hold room for this breadth of perspective as much as you can.&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Be With Ambiguity&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Alternately, can you backtrack for a second, and recognize what situation caused you to feel paranoid?&amp;#92;nOften, paranoia is caused by stimuli that feel ambiguous in some way. Is it possible for you to sit with the ambiguity itself, without jumping to conclusions about it? What makes that hard?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Your Own Idea&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;What feels like it would help you create a sense of safety from which to get curious about your paranoia?&amp;#92;n&amp;quot;}];
+    const activateCuriosity = [{&amp;quot;title&amp;quot;:&amp;quot;Where does the paranoia locate itself?&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Why do you think that people are looking at you, talking about you, wanting to hurt you, etc? Are there aspects of yourself that make you self-conscious or embarrassed?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Where are you vulnerable to paranoia?&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Why do these parts of yourself or your presentation make you self conscious, embarrassed, or hateful towards yourself?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;Acceptance&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;Can you accept these aspects of yourself with pride and love for your uniqueness?&amp;#92;n&amp;quot;},{&amp;quot;title&amp;quot;:&amp;quot;What other questions or exercises can help you?&amp;quot;,&amp;quot;content&amp;quot;:&amp;quot;What other practices or reflections would help you better live with your paranoia?&amp;#92;n&amp;quot;}];
 
     // Check if user is authenticated
     const { data: { session } } = await supabase.auth.getSession()
@@ -530,66 +527,66 @@ What other practices or reflections would help you better live with your paranoi
         // First, get or create prompts
         async function getOrCreatePrompts() {
             try {
-                console.log('Starting getOrCreatePrompts');
-                for (const section of ['press_pause', 'activate_curiosity']) {
-                    const items = section === 'press_pause' ? pressPause : activateCuriosity;
+                console.log(&#39;Starting getOrCreatePrompts&#39;);
+                for (const section of [&#39;press_pause&#39;, &#39;activate_curiosity&#39;]) {
+                    const items = section === &#39;press_pause&#39; ? pressPause : activateCuriosity;
                     
                     for (const item of items) {
                         // Check if prompt exists
                         const { data, error } = await supabase
-                            .from('prompts')
-                            .select('id')
-                            .eq('page_type', 'paranoia')
-                            .eq('section_type', section)
-                            .eq('content', item.content)
+                            .from(&#39;prompts&#39;)
+                            .select(&#39;id&#39;)
+                            .eq(&#39;page_type&#39;, &#39;paranoia&#39;)
+                            .eq(&#39;section_type&#39;, section)
+                            .eq(&#39;content&#39;, item.content)
                             .single();
                         
                         if (error) {
-                            console.error('Error finding prompt:', error);
+                            console.error(&#39;Error finding prompt:&#39;, error);
                             continue;
                         } else if (data) {
                             promptIds[item.title] = data.id;
-                            console.log(`Found prompt ID for "${item.title}":`, data.id);
+                            console.log(`Found prompt ID for &quot;${item.title}&quot;:`, data.id);
                         }
                     }
                 }
             } catch (error) {
-                console.error('Error in getOrCreatePrompts:', error);
+                console.error(&#39;Error in getOrCreatePrompts:&#39;, error);
             }
         }
 
         // Wait for prompts to be ready before showing UI
         await getOrCreatePrompts();
 
-        document.querySelectorAll('.journal-entry').forEach(entry => {
-            entry.style.display = 'block';
+        document.querySelectorAll(&#39;.journal-entry&#39;).forEach(entry =&gt; {
+            entry.style.display = &#39;block&#39;;
         })
-        document.querySelectorAll('.past-entries-sidebar').forEach(sidebar => {
-            sidebar.style.display = 'block';
+        document.querySelectorAll(&#39;.past-entries-sidebar&#39;).forEach(sidebar =&gt; {
+            sidebar.style.display = &#39;block&#39;;
         })
 
         // Load past entries
         async function loadEntries() {
             const { data: entries, error } = await supabase
-                .from('responses')
-                .select('*')
-                .eq('user_id', session.user.id)
-                .order('created_at', { ascending: false })
+                .from(&#39;responses&#39;)
+                .select(&#39;*&#39;)
+                .eq(&#39;user_id&#39;, session.user.id)
+                .order(&#39;created_at&#39;, { ascending: false })
 
             if (error) {
-                console.error('Error loading entries:', error)
+                console.error(&#39;Error loading entries:&#39;, error)
                 return
             }
 
             // Group entries by question
-            entries.forEach(entry => {
-                const container = document.querySelector(`[data-question="${entry.prompt_id}"] .past-entries-sidebar .past-entries`)
+            entries.forEach(entry =&gt; {
+                const container = document.querySelector(`[data-question=&quot;${entry.prompt_id}&quot;] .past-entries-sidebar .past-entries`)
                 if (container) {
-                    const entryEl = document.createElement('div')
-                    entryEl.className = 'past-entry'
+                    const entryEl = document.createElement(&#39;div&#39;)
+                    entryEl.className = &#39;past-entry&#39;
                     entryEl.innerHTML = `
-                        <div class="entry-date">${new Date(entry.created_at).toLocaleDateString()}</div>
-                        <div class="entry-content">${entry.content}</div>
+                        &lt;div class=&quot;entry-date&quot;&gt;${new Date(entry.created_at).toLocaleDateString()}&lt;/div&gt;
+                        &lt;div class=&quot;entry-content&quot;&gt;${entry.content}&lt;/div&gt;
                     `
                     container.appendChild(entryEl)
                 }
@@ -598,18 +595,18 @@ What other practices or reflections would help you better live with your paranoi
 
         // Save new entry
         async function saveEntry(section, question, content) {
-            console.log('saveEntry called with:', { section, question, content });
-            console.log('Looking up prompt ID for:', question);
-            console.log('Available promptIds:', promptIds);
+            console.log(&#39;saveEntry called with:&#39;, { section, question, content });
+            console.log(&#39;Looking up prompt ID for:&#39;, question);
+            console.log(&#39;Available promptIds:&#39;, promptIds);
             const promptId = promptIds[question];
             if (!promptId) {
-                console.error('No prompt ID found for question:', question);
-                console.error('Available questions:', Object.keys(promptIds));
+                console.error(&#39;No prompt ID found for question:&#39;, question);
+                console.error(&#39;Available questions:&#39;, Object.keys(promptIds));
                 return false;
             }
 
             const { error } = await supabase
-                .from('responses')
+                .from(&#39;responses&#39;)
                 .insert([
                     { 
                         content: content,
@@ -619,7 +616,7 @@ What other practices or reflections would help you better live with your paranoi
                 ])
 
             if (error) {
-                console.error('Error saving entry:', {
+                console.error(&#39;Error saving entry:&#39;, {
                     message: error.message,
                     details: error.details,
                     hint: error.hint,
@@ -634,26 +631,26 @@ What other practices or reflections would help you better live with your paranoi
         // Helper function to escape HTML
         function escapeHtml(unsafe) {
             return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+                .replace(/&amp;/g, &quot;&amp;amp;&quot;)
+                .replace(/&lt;/g, &quot;&amp;lt;&quot;)
+                .replace(/&gt;/g, &quot;&amp;gt;&quot;)
+                .replace(/&quot;/g, &quot;&amp;quot;&quot;)
+                .replace(/&#39;/g, &quot;&amp;#039;&quot;);
         }
 
         // Add event listeners to save buttons
-        document.querySelectorAll('.save-entry').forEach(button => {
-            button.addEventListener('click', async () => {
-                const journalEntry = button.closest('.journal-entry')
-                const textarea = journalEntry.querySelector('textarea')
+        document.querySelectorAll(&#39;.save-entry&#39;).forEach(button =&gt; {
+            button.addEventListener(&#39;click&#39;, async () =&gt; {
+                const journalEntry = button.closest(&#39;.journal-entry&#39;)
+                const textarea = journalEntry.querySelector(&#39;textarea&#39;)
                 const section = journalEntry.dataset.section
                 // Find the original title from the slug
                 const questionSlug = journalEntry.dataset.question
-                const items = section === 'press_pause' ? pressPause : activateCuriosity
-                const originalQuestion = items.find(item => item.title.toLowerCase().replace(/\s+/g, '-') === questionSlug)?.title
+                const items = section === &#39;press_pause&#39; ? pressPause : activateCuriosity
+                const originalQuestion = items.find(item =&gt; item.title.toLowerCase().replace(/&#92;s+/g, &#39;-&#39;) === questionSlug)?.title
                 
                 if (!originalQuestion) {
-                    console.error('Could not find original question for slug:', questionSlug)
+                    console.error(&#39;Could not find original question for slug:&#39;, questionSlug)
                     return
                 }
 
@@ -663,17 +660,17 @@ What other practices or reflections would help you better live with your paranoi
                     const success = await saveEntry(section, originalQuestion, content)
                     if (success) {
                         // Add new entry to UI immediately
-                        const pastEntriesContainer = document.querySelector(`[data-section="${section}"][data-question="${questionSlug}"] .past-entries-sidebar .past-entries`)
+                        const pastEntriesContainer = document.querySelector(`[data-section=&quot;${section}&quot;][data-question=&quot;${questionSlug}&quot;] .past-entries-sidebar .past-entries`)
                         if (pastEntriesContainer) {
-                            const entryEl = document.createElement('div')
-                            entryEl.className = 'past-entry'
+                            const entryEl = document.createElement(&#39;div&#39;)
+                            entryEl.className = &#39;past-entry&#39;
                             entryEl.innerHTML = `
-                                <div class="entry-date">${new Date().toLocaleDateString()}</div>
-                                <div class="entry-content">${escapeHtml(content)}</div>
+                                &lt;div class=&quot;entry-date&quot;&gt;${new Date().toLocaleDateString()}&lt;/div&gt;
+                                &lt;div class=&quot;entry-content&quot;&gt;${escapeHtml(content)}&lt;/div&gt;
                             `
                             // Insert at the top of the list
                             pastEntriesContainer.insertBefore(entryEl, pastEntriesContainer.firstChild)
-                            textarea.value = ''
+                            textarea.value = &#39;&#39;
                         }
                     }
                 }
@@ -683,7 +680,7 @@ What other practices or reflections would help you better live with your paranoi
         // Load entries on page load
         loadEntries()
     }
-</script>
+&lt;/script&gt;
 
     </div>
     
