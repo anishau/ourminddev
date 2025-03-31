@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Field Notes | ourmind.care</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
-    <!-- Use the ESM version of Supabase -->
-    <script src="https://clerk.browser.accounts.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js"></script>
-    <script>
-        window.Clerk.init({
-            publishableKey: ''
-        });
+    <script type="module">
+        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+        window.supabase = createClient(
+            'https://ykifhipjmptpqswsblmi.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlraWZoaXBqbXB0cHFzd3NibG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5ODA2NTIsImV4cCI6MjA1NzU1NjY1Mn0.gvDlgrJHrdT6vWMBQaK8XirtlKSVDX5BvVrMreOfjpk'
+        )
     </script>
     <style>
         :root {
@@ -112,6 +112,16 @@
             width: 100%;
             max-width: 400px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .auth-form a {
+            color: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .auth-form a:hover {
+            opacity: 0.8;
         }
 
         .form-group {
@@ -375,11 +385,11 @@
         </h1>
         
 
-        &lt;p&gt;A collection of personal experiences and observations about mental health.&lt;/p&gt;
-&lt;h2&gt;Notes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/field_note_1&quot;&gt;On Catatonia&lt;/a&gt; - An account of a hospital visit and experience with catatonic episodes&lt;/li&gt;
-&lt;/ul&gt;
+        <p>A collection of personal experiences and observations about mental health.</p>
+<h2>Notes</h2>
+<ul>
+<li><a href="/field_note_1">On Catatonia</a> - An account of a hospital visit and experience with catatonic episodes</li>
+</ul>
 
     </div>
     
