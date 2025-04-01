@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: Sign Up
+---
+<div class="auth-form">
+  <h2>Sign Up</h2>
+  <form id="registerForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Sign Up</button>
+  </form>
+  <p>Already have an account? <a href="/auth/sign-in">Sign In</a></p>
+</div>
+
+<script type="module">
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
+
+  try {
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: window.location.origin + '/hearing-voices'
+      }
+    })
+    if (error) throw error
+    alert('Please check your email to confirm your account')
+    window.location.href = '/hearing-voices'
+  } catch (error) {
+    console.error('Error signing up:', error.message)
+    alert(error.message)
+  }
+})
+</script>
+
+<style>
+  .auth-form {
+    margin: 0 auto;
+  }
+</style> 
